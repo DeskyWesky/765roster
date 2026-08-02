@@ -49,7 +49,7 @@ export const roster: Category[] = [
   {
     id: "larps",
     label: "Larps",
-    accent: "#964B00",
+    accent: "#D2B48C",
     members: [
       { name: "Oreo", bio: "i am big com larp boss 😡", avatar: "https://cdn.discordapp.com/avatars/931703946341400620/9cd37676af9332738dd96dcb3578aaba.webp?size=1024" },
     ],
@@ -57,7 +57,7 @@ export const roster: Category[] = [
     {
     id: "skids",
     label: "Skidders",
-    accent: "#FF8C00",
+    accent: "#7A5901",
     members: [
       { name: "Quinn", bio: "skidder and uses ai for everything 💩", avatar: "https://cdn.discordapp.com/avatars/1525544874919854098/8198e4184c230219afa239492dd9f686.webp?size=1024" },
     ],
