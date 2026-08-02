@@ -26,7 +26,7 @@ export const roster: Category[] = [
     label: "Co Owners",
     accent: "#6C7CFF",
     members: [
-      { name: "N/A", bio: "N/A" },
+      { name: "N/A", bio: "N/A", avatar: "" },
     ],
   },
   {
@@ -34,7 +34,7 @@ export const roster: Category[] = [
     label: "Admins",
     accent: "#8B7CFF",
     members: [
-      { name: "N/A", bio: "N/A" },
+      { name: "vohjer", bio: "skidder and ai vibecoder", avatar: "https://cdn.discordapp.com/avatars/1382812173608419398/4284901d662656d93f63178e7ec857b8.webp?size=3072" },
     ],
   },
   {
@@ -42,7 +42,7 @@ export const roster: Category[] = [
     label: "Larps",
     accent: "#4EE1C2",
     members: [
-      { name: "N/A", bio: "N/A" },
+      { name: "N/A", bio: "N/A", avatar: "" },
     ],
   },
 ];
