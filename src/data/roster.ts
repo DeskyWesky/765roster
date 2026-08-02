@@ -17,7 +17,7 @@ export const roster: Category[] = [
     label: "Founders",
     accent: "#4CC3FF",
     members: [
-      { name: "deskk", bio: "mothership goat and backend skid" },
+      { name: "deskk", bio: "advanced mothership goat and backend skid", avatar: "https://cdn.discordapp.com/avatars/1362020383846432931/9a5c4c23d06539d3aaf7c8b7708453c3.webp?size=3072" },
       { name: "N/A", bio: "N/A" },
     ],
   },
