@@ -29,6 +29,14 @@ export const roster: Category[] = [
       { name: "N/A", bio: "N/A", avatar: "" },
     ],
   },
+    {
+    id: "nibbers",
+    label: "NIBBERS",
+    accent: "#6C7CFF",
+    members: [
+      { name: "BigboiTheBiggest", bio: "Your common opsec demon 😈 ", avatar: "https://cdn.discordapp.com/avatars/1384781399252402317/a4a83084cce159896d31aef419ec73e1.webp?size=1024" },
+    ],
+  },
   {
     id: "admins",
     label: "Admins",
