@@ -132,6 +132,4 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   html, body { scroll-behavior: auto; }
-  .gate-cta { animation: none; }
-  .roster-reveal { animation: none; opacity: 1; transform: none; }
 }
