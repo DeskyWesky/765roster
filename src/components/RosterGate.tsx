@@ -24,6 +24,7 @@ export default function RosterGate({ children }: { children: React.ReactNode }) 
       <SpotifyLoop ref={spotifyRef} />
       {!revealed ? (
         <div className="gate">
+          <AsciiTitle text="765" className="ascii-title" />
           <button className="gate-cta" onClick={handleClick}>
             Click to see roster
           </button>
