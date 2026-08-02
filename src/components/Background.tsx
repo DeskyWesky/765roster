@@ -18,10 +18,6 @@ export default function Background() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
@@ -86,17 +82,12 @@ export default function Background() {
       draw();
     }
 
-    let frame: number | undefined;
-
-    if (reduceMotion) {
-      draw();
-    } else {
-      const loop = () => {
-        frame = requestAnimationFrame(loop);
-        step();
-      };
+    let frame: number;
+    const loop = () => {
       frame = requestAnimationFrame(loop);
-    }
+      step();
+    };
+    frame = requestAnimationFrame(loop);
 
     function handleResize() {
       if (!canvas) return;
@@ -105,13 +96,12 @@ export default function Background() {
       nodeCount = Math.max(30, Math.floor((width * height) / density));
       nodes = makeNodes(nodeCount);
       linkDistance = Math.min(width, height) * 0.14;
-      draw();
     }
 
     window.addEventListener("resize", handleResize);
 
     return () => {
-      if (frame !== undefined) cancelAnimationFrame(frame);
+      cancelAnimationFrame(frame);
       window.removeEventListener("resize", handleResize);
     };
   }, []);
