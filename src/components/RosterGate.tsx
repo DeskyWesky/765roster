@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import SpotifyLoop, { SpotifyLoopHandle } from "./SpotifyLoop";
 
 export default function RosterGate({ children }: { children: React.ReactNode }) {
   const [revealed, setRevealed] = useState(false);
   const rosterRef = useRef<HTMLDivElement | null>(null);
+  const spotifyRef = useRef<SpotifyLoopHandle>(null);
 
   useEffect(() => {
     if (revealed && rosterRef.current) {
@@ -12,19 +14,25 @@ export default function RosterGate({ children }: { children: React.ReactNode }) 
     }
   }, [revealed]);
 
-  if (!revealed) {
-    return (
-      <div className="gate">
-        <button className="gate-cta" onClick={() => setRevealed(true)}>
-          Click to see roster
-        </button>
-      </div>
-    );
+  function handleClick() {
+    setRevealed(true);
+    spotifyRef.current?.play();
   }
 
   return (
-    <div ref={rosterRef} className="roster-reveal">
-      {children}
-    </div>
+    <>
+      <SpotifyLoop ref={spotifyRef} />
+      {!revealed ? (
+        <div className="gate">
+          <button className="gate-cta" onClick={handleClick}>
+            Click to see roster
+          </button>
+        </div>
+      ) : (
+        <div ref={rosterRef} className="roster-reveal">
+          {children}
+        </div>
+      )}
+    </>
   );
 }
