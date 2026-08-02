@@ -4,9 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import SpotifyLoop, { SpotifyLoopHandle } from "./SpotifyLoop";
 import AsciiTitle from "./AsciiTitle";
 
-export default function RosterGate({ children }: { children: React.ReactNode }) {
+interface RosterGateProps {
+  children: React.ReactNode;
+}
+
+export default function RosterGate({ children }: RosterGateProps) {
   const [revealed, setRevealed] = useState(false);
-  const rosterRef = useRef<HTMLDivElement | null>(null);
+  const rosterRef = useRef<HTMLDivElement>(null);
   const spotifyRef = useRef<SpotifyLoopHandle>(null);
 
   useEffect(() => {
@@ -18,10 +22,10 @@ export default function RosterGate({ children }: { children: React.ReactNode }) 
     }
   }, [revealed]);
 
-  function handleClick() {
+  const handleClick = () => {
     setRevealed(true);
     spotifyRef.current?.play();
-  }
+  };
 
   return (
     <>
@@ -39,8 +43,12 @@ export default function RosterGate({ children }: { children: React.ReactNode }) 
               Click to see roster
             </button>
           </div>
+        </div>
       ) : (
-        <div ref={rosterRef} className="roster-reveal">
+        <div
+          ref={rosterRef}
+          className="roster-reveal"
+        >
           {children}
         </div>
       )}
