@@ -2,16 +2,10 @@
 
 import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 
-const TRACK_URI = "spotify:track:73oGaQ8vzJMHDOReoMITNd";
-
-interface SpotifyController {
-  play: () => void;
-  addListener: (event: string, cb: (e: any) => void) => void;
-}
-
 declare global {
   interface Window {
-    onSpotifyIframeApiReady?: (IFrameAPI: any) => void;
+    YT: any;
+    onYouTubeIframeAPIReady?: () => void;
   }
 }
 
@@ -19,53 +13,72 @@ export interface SpotifyLoopHandle {
   play: () => void;
 }
 
-const SpotifyLoop = forwardRef<SpotifyLoopHandle>((_props, ref) => {
-  const mountRef = useRef<HTMLDivElement | null>(null);
-  const controllerRef = useRef<SpotifyController | null>(null);
+const VIDEO_ID = "jViw4WrCHIo";
+
+const SpotifyLoop = forwardRef<SpotifyLoopHandle>((_, ref) => {
+  const playerRef = useRef<any>(null);
+  const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let cancelled = false;
 
-    function setup(IFrameAPI: any) {
-      if (cancelled || !mountRef.current) return;
-      IFrameAPI.createController(
-        mountRef.current,
-        { uri: TRACK_URI, width: "1", height: "1" },
-        (controller: SpotifyController) => {
-          controllerRef.current = controller;
-          controller.addListener("playback_update", (e: any) => {
-            const { position, duration, isPaused } = e.data || {};
-            if (isPaused && duration > 0 && position >= duration - 0.3) {
-              controller.play();
-            }
-          });
-        }
-      );
+    function createPlayer() {
+      if (cancelled || !mountRef.current || playerRef.current) return;
+
+      playerRef.current = new window.YT.Player(mountRef.current, {
+        width: "1",
+        height: "1",
+        videoId: VIDEO_ID,
+        playerVars: {
+          autoplay: 0,
+          controls: 0,
+          loop: 1,
+          playlist: VIDEO_ID,
+          rel: 0,
+          modestbranding: 1,
+        },
+      });
     }
 
-    if (!document.getElementById("spotify-iframe-api")) {
-      const script = document.createElement("script");
-      script.id = "spotify-iframe-api";
-      script.src = "https://open.spotify.com/embed/iframe-api/v1";
-      script.async = true;
-      document.body.appendChild(script);
-    }
+    if (window.YT?.Player) {
+      createPlayer();
+    } else {
+      if (!document.getElementById("youtube-iframe-api")) {
+        const script = document.createElement("script");
+        script.id = "youtube-iframe-api";
+        script.src = "https://www.youtube.com/iframe_api";
+        document.body.appendChild(script);
+      }
 
-    window.onSpotifyIframeApiReady = (IFrameAPI: any) => setup(IFrameAPI);
+      window.onYouTubeIframeAPIReady = createPlayer;
+    }
 
     return () => {
       cancelled = true;
+      playerRef.current?.destroy?.();
     };
   }, []);
 
   useImperativeHandle(ref, () => ({
-    play: () => controllerRef.current?.play(),
+    play() {
+      if (!playerRef.current) return;
+
+      playerRef.current.unMute?.();
+      playerRef.current.playVideo?.();
+    },
   }));
 
   return (
     <div
       ref={mountRef}
-      style={{ position: "absolute", width: 1, height: 1, overflow: "hidden", opacity: 0 }}
+      style={{
+        position: "absolute",
+        width: 1,
+        height: 1,
+        opacity: 0,
+        overflow: "hidden",
+        pointerEvents: "none",
+      }}
     />
   );
 });
