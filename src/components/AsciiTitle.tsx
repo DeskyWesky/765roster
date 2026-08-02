@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-const CHARS = ["@", "#", "%", "*", "+", "=", "-", ":", "."];
+const CHARS = ["@", "#", "%", "*", "+", "=", "-", ":", ".", "?", "!", "&", "$", "~", "*", "^"];
 
 interface AsciiTitleProps {
   text: string;
@@ -32,7 +32,7 @@ export default function AsciiTitle({ text, className }: AsciiTitleProps) {
     sctx.textAlign = "center";
     sctx.textBaseline = "middle";
     sctx.font = "900 300px Arial, sans-serif";
-    sctx.fillText(text, width / 2, height / 2 + 20);
+    sctx.fillText(text, width / 2 - 35, height / 2 + 20);
 
     const imageData = sctx.getImageData(0, 0, width, height).data;
 
