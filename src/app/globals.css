@@ -72,6 +72,10 @@ body {
   outline-offset: 6px;
 }
 
+.gate-cta {
+  align-self: center;
+}
+
 @keyframes gatePop {
   0%, 100% {
     transform: scale(1);
@@ -93,11 +97,10 @@ body {
 }
 
 .ascii-title {
-  width: min(92vw, 900px);
-  height: auto;
-  aspect-ratio: 1000 / 360;
+  width: 900px;
+  max-width: 92vw;
   display: block;
-  margin: 0 auto 6px auto;
+  margin: 0 auto 28px;
 }
 
 .hero-subtitle {
@@ -133,6 +136,12 @@ body {
 
 .roster-reveal {
   animation: rosterFadeIn 0.6s ease forwards;
+}
+
+.gate-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @keyframes rosterFadeIn {
