@@ -31,12 +31,12 @@ export default function AsciiTitle({ text, className }: AsciiTitleProps) {
     sctx.fillStyle = "#fff";
     sctx.textAlign = "center";
     sctx.textBaseline = "middle";
-    sctx.font = "900 170px Arial, sans-serif";
-    sctx.fillText(text, width / 2, height / 2 + 10);
+    sctx.font = "900 300px Arial, sans-serif";
+    sctx.fillText(text, width / 2, height / 2 + 20);
 
     const imageData = sctx.getImageData(0, 0, width, height).data;
 
-    const cell = 9;
+    const cell = 8;
     ctx.clearRect(0, 0, width, height);
     ctx.font = `${cell}px monospace`;
     ctx.textAlign = "center";
