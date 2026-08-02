@@ -35,6 +35,7 @@ export const roster: Category[] = [
     accent: "#8B0000",
     members: [
       { name: "BigboiTheBiggest", bio: "Your common opsec demon 😈 ", avatar: "https://cdn.discordapp.com/avatars/1384781399252402317/a4a83084cce159896d31aef419ec73e1.webp?size=1024" },
+      { name: "Cloudy", bio: "Your Main harm comboss guy don’t mess with me 😈", avatar: "https://cdn.discordapp.com/avatars/1106344507458469938/39b32e79e875fbe5207c3eada3fb84de.webp?size=1024" },
     ],
   },
   {
