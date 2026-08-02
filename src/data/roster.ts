@@ -51,7 +51,15 @@ export const roster: Category[] = [
     label: "Larps",
     accent: "#964B00",
     members: [
-      { name: "N/A", bio: "N/A", avatar: "" },
+      { name: "Oreo", bio: "i am big com larp boss 😡", avatar: "https://cdn.discordapp.com/avatars/931703946341400620/9cd37676af9332738dd96dcb3578aaba.webp?size=1024" },
+    ],
+  },
+    {
+    id: "skids",
+    label: "Skidders",
+    accent: "#FF8C00",
+    members: [
+      { name: "Quinn", bio: "skidder and uses ai for everything 💩", avatar: "https://cdn.discordapp.com/avatars/1525544874919854098/8198e4184c230219afa239492dd9f686.webp?size=1024" },
     ],
   },
 ];
