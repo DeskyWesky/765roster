@@ -2,6 +2,7 @@ import Background from "@/components/Background";
 import Header from "@/components/Header";
 import Category from "@/components/Category";
 import Footer from "@/components/Footer";
+import RosterGate from "@/components/RosterGate";
 import { roster } from "@/data/roster";
 
 export default function Home() {
@@ -10,11 +11,13 @@ export default function Home() {
       <Background />
       <main className="page">
         <Header />
-        <div id="roster" className="roster">
-          {roster.map((category) => (
-            <Category key={category.id} category={category} />
-          ))}
-        </div>
+        <RosterGate>
+          <div className="roster">
+            {roster.map((category) => (
+              <Category key={category.id} category={category} />
+            ))}
+          </div>
+        </RosterGate>
         <Footer />
       </main>
     </>
