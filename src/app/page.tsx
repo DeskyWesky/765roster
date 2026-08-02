@@ -10,8 +10,8 @@ export default function Home() {
     <>
       <Background />
       <main className="page">
-        <Header />
         <RosterGate>
+          <Header />
           <div className="roster">
             {roster.map((category) => (
               <Category key={category.id} category={category} />
