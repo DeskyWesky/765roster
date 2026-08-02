@@ -63,6 +63,7 @@ export default function Background() {
     frame = requestAnimationFrame(loop);
 
     function handleResize() {
+      if (!canvas) return;
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
       columns = Math.floor(width / fontSize);
