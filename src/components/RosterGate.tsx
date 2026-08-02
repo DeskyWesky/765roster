@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import SpotifyLoop, { SpotifyLoopHandle } from "./SpotifyLoop";
+import AsciiTitle from "./AsciiTitle";
 
 export default function RosterGate({ children }: { children: React.ReactNode }) {
   const [revealed, setRevealed] = useState(false);
@@ -10,7 +11,10 @@ export default function RosterGate({ children }: { children: React.ReactNode }) 
 
   useEffect(() => {
     if (revealed && rosterRef.current) {
-      rosterRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      rosterRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   }, [revealed]);
 
@@ -22,10 +26,15 @@ export default function RosterGate({ children }: { children: React.ReactNode }) 
   return (
     <>
       <SpotifyLoop ref={spotifyRef} />
+
       {!revealed ? (
         <div className="gate">
           <AsciiTitle text="765" className="ascii-title" />
-          <button className="gate-cta" onClick={handleClick}>
+
+          <button
+            className="gate-cta"
+            onClick={handleClick}
+          >
             Click to see roster
           </button>
         </div>
