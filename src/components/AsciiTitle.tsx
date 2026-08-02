@@ -18,8 +18,8 @@ export default function AsciiTitle({ text, className }: AsciiTitleProps) {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const width = 600;
-    const height = 220;
+    const width = 1000;
+    const height = 360;
     canvas.width = width;
     canvas.height = height;
 
