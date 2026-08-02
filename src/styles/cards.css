@@ -27,7 +27,7 @@
 
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: 1fr;
   gap: 16px;
 }
 
@@ -41,6 +41,8 @@
   border-radius: 16px;
   padding: 16px;
   transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  width: 100%;
+  max-width: 700px;
 }
 
 .member-card:hover {
