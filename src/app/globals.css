@@ -1,0 +1,130 @@
+@import "../styles/cards.css";
+
+:root {
+  --bg: #05070f;
+  --bg-elevated: #0b0f1e;
+  --text: #e9eefc;
+  --text-muted: #8792ad;
+  --border: rgba(140, 190, 255, 0.14);
+  --accent-primary: #4cc3ff;
+  --accent-secondary: #6c7cff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body), system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
+
+.bg-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.55;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+.hero {
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 18px;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(4.5rem, 18vw, 9rem);
+  line-height: 1;
+  margin: 0;
+  color: var(--text);
+  text-shadow: 0 0 24px rgba(76, 195, 255, 0.35);
+}
+
+.hero-title-accent {
+  color: var(--accent-primary);
+  text-shadow: 0 0 40px rgba(76, 195, 255, 0.75), 0 0 12px rgba(76, 195, 255, 0.9);
+}
+
+.hero-tagline {
+  max-width: 46ch;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.hero-cta {
+  margin-top: 10px;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--accent-primary);
+  padding: 12px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 0 30px rgba(76, 195, 255, 0.45);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(76, 195, 255, 0.65);
+}
+
+.hero-cta:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 3px;
+}
+
+.roster {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  padding-top: 24px;
+}
+
+.site-footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding-top: 60px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body {
+    scroll-behavior: auto;
+  }
+}
