@@ -53,6 +53,7 @@ export const roster: Category[] = [
     accent: "#D2B48C",
     members: [
       { name: "Oreo", bio: "i am big com larp boss 😡", avatar: "https://cdn.discordapp.com/avatars/931703946341400620/9cd37676af9332738dd96dcb3578aaba.webp?size=1024" },
+      { name: "Exe.Kdot", bio: "gtag cumboss don’t mess with me", avatar: "https://cdn.discordapp.com/avatars/1526682528424005846/a_3fd1d0c604e8d46b5f52c27c115366ed.webp?size=1024&animated=true" },
     ],
   },
     {
