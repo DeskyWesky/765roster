@@ -26,7 +26,7 @@ export const roster: Category[] = [
     label: "Co Owners",
     accent: "#964B00",
     members: [
-      { name: "N/A", bio: "N/A", avatar: "" },
+      { name: ".ᵦₒₒₗpocliyterms.ᶜᵘᵗᵉˡʸ", bio: "obsessed with femboys and goated skid | will harm you and your e girl", avatar: "https://cdn.discordapp.com/avatars/1413850215718326353/3765f2571eaff0d8532ec9f2601e52ed.webp?size=1024" },
     ],
   },
     {
