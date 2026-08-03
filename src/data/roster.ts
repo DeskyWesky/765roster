@@ -60,6 +60,7 @@ export const roster: Category[] = [
     accent: "#7A5901",
     members: [
       { name: "Quinn", bio: "skidder and uses ai for everything 💩", avatar: "https://cdn.discordapp.com/avatars/1525544874919854098/8198e4184c230219afa239492dd9f686.webp?size=1024" },
+      { name: "/bigpluh", bio: "i am a gay neegy pls  boi asokok; for 765 cuz i am cumbuss 🤑", avatar: "https://cdn.discordapp.com/avatars/1153777050818195557/970dd32b0be3dfc9c6a86795abb2b619.webp?size=1024" },
     ],
   },
 ];
