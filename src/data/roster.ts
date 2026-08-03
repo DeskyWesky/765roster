@@ -37,6 +37,8 @@ export const roster: Category[] = [
     members: [
       { name: "BigboiTheBiggest", bio: "Your common opsec demon 😈 ", avatar: "https://cdn.discordapp.com/avatars/1384781399252402317/a4a83084cce159896d31aef419ec73e1.webp?size=1024" },
       { name: "Cloudy", bio: "Your Main harm comboss guy don’t mess with me 😈", avatar: "https://cdn.discordapp.com/avatars/1106344507458469938/39b32e79e875fbe5207c3eada3fb84de.webp?size=1024" },
+      { name: "Snug", bio: "I’m 765 / Harmful Comboss I ddos discord and deskk is my com boi", avatar: "https://cdn.discordapp.com/avatars/1341914129169907713/53b20e385d8859732db559615019bc5d.webp?size=1024" },
+      { name: "Phantom", bio: "I’m phantim mess with me and I’ll harm ur Roblox e girl", avatar: "https://cdn.discordapp.com/avatars/1074466373234872411/8c14513824f742424173f91dfa4ff7ee.webp?size=1024" },
     ],
   },
   {
