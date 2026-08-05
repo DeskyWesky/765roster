@@ -18,7 +18,7 @@ export const roster: Category[] = [
     accent: "#4169E1",
     members: [
       { name: "deskk", bio: "advanced mothership goat and backend skid", avatar: "https://cdn.discordapp.com/avatars/1362020383846432931/9a5c4c23d06539d3aaf7c8b7708453c3.webp?size=3072" },
-      { name: "N/A", bio: "N/A" },
+      { name: "Xan.999", bio: "biggest larper and skid on discord", avatar: "https://cdn.discordapp.com/avatars/1523214825596129290/f8768e532ba1dca1a021b13b10572b3b.webp?size=1024" },
     ],
   },
   {
